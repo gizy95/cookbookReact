@@ -19,12 +19,14 @@ const useContentful = () => {
                 select: "fields"
             });
 
+            
+
             const sanitizedEntries = entries.items.map ( (item) => {
                 const picture = item.fields.picture.fields;
 
                 return {
                     ...item.fields,
-                    picture
+                    picture,
                 }
             })
 
