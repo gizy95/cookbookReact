@@ -9,14 +9,18 @@ function App() {
   const { getRecipes } = useContentful();
 
   useEffect(() => {
-    getRecipes().then((response) => console.log(response))
+    getRecipes().then((response) => setRecipes(response));
+
   });
 
 
 
   return (
     <>
-      <Recipe />
+    {recipes.map( (recipe,index) => (
+
+      <Recipe recipe={recipe} key={index}/>
+    ))}
     </>
   )
 }
