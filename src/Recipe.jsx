@@ -1,25 +1,25 @@
 import React from 'react'
 import one from './one.jpg'
-const Recipe = () => {
+const Recipe = ({recipe}) => {
     return (
         <div className="container">
             <div className="header">
-                <img src={one} alt="img"></img>
-                <h1>Name Recipe</h1>
+                <img src={recipe.picture.file.url} alt="img"></img>
+                <h1>{recipe.title}</h1>
             </div>
             <div className="info">
-                <p>Servings</p>
-                <p>Time</p>
-                <p>Difficulty</p>
-                <p>Calories</p>
+                <p>Servings: {recipe.servings}</p>
+                <p>Time: {recipe.time} hours</p>
+                <p>Difficulty: {recipe.difficulty}</p>
+                <p>Calories: {recipe.calories}</p>
             </div>
             <div className="description">
                 <div className="ingredients">
                     <h2>Ingredients</h2>
                     <ul>
-                        <li>Ingredient 1</li>
-                        <li>Ingredient 2</li>
-                        <li>Ingredient 3</li>
+                        {recipe.ingredients.map( ingredient => (
+                            <li>{ingredient}</li>
+                        ))}
                     </ul>
                 </div>
                 <div className="steps">
