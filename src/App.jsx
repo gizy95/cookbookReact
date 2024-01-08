@@ -5,12 +5,12 @@ import Recipe from './Recipe'
 
 function App() {
 
-  // const [recipes, setRecipes] = useState([])
-  // const { getRecipes } = useContentful();
+  const [recipes, setRecipes] = useState([])
+  const { getRecipes } = useContentful();
 
-  // useEffect(() => {
-  //   getRecipes().then((response) => console.log(response))
-  // });
+  useEffect(() => {
+    getRecipes().then((response) => console.log(response))
+  });
 
 
 
