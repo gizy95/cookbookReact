@@ -8,10 +8,10 @@ const Recipe = ({ recipe }) => {
         <h1>{recipe.title}</h1>
       </div>
       <div className="info">
-        <p>Servings: {recipe.servings}</p>
-        <p>Time: {recipe.time} hours</p>
-        <p>Difficulty: {recipe.difficulty}</p>
-        <p>Calories: {recipe.calories}</p>
+        <p><span className="info-title">Servings</span> <br /> {recipe.servings}</p>
+        <p><span className="info-title">Time</span><br /> {recipe.time} hours</p>
+        <p><span className="info-title">Difficulty</span><br /> {recipe.difficulty}</p>
+        <p><span className="info-title">Calories</span><br /> {recipe.calories}</p>
       </div>
       <div className="description">
         <div className="ingredients">
