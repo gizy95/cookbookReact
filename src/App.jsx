@@ -3,16 +3,22 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Recipe from "./Recipe";
 import Navbar from "./Navbar";
+import Loader from "./Loader";
 
 function App() {
 
 
   const [recipes, setRecipes] = useState([])
   const [currentRecipeIndex, setCurrentRecipeIndex] = useState(0)
+  const [loading, setLoading] = useState(true);
   const { getRecipes } = useContentful();
 
   useEffect(() => {
-    getRecipes().then((response) => setRecipes(response))
+    setLoading(true);
+    getRecipes().then((response) => {
+      setRecipes(response);
+      setLoading(false); // Set loading to false after fetching data
+    })
   }, [])
 
   const goToNextRecipe = () => {
@@ -26,14 +32,17 @@ function App() {
   return (
     <>
       <Navbar />
-      {recipes.length > 0 && (
-        <div>
-          <Recipe recipe={recipes[currentRecipeIndex]} key={currentRecipeIndex} />
-          <button onClick={goToPreviousRecipe}>Previous</button>
-          <button onClick={goToNextRecipe}>Next</button>
-        </div>
+      {loading ? (
+        <Loader /> // Show Loader when fetching data
+      ) : (
+        recipes.length > 0 && (
+          <div>
+            <Recipe recipe={recipes[currentRecipeIndex]} key={currentRecipeIndex} />
+            <button onClick={goToPreviousRecipe}>Previous</button>
+            <button onClick={goToNextRecipe}>Next</button>
+          </div>
+        )
       )}
-
     </>
   );
 }
