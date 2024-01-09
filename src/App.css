@@ -75,6 +75,10 @@
   text-align: center;
 }
 
+.navbar .home {
+  width: 160px;
+}
+
 .navbar li:hover {
 
   font-weight: bold;
