@@ -64,8 +64,10 @@ function App() {
                 key={currentRecipeIndex}
               />
             )}
-            <button onClick={goToPreviousRecipe}>Previous</button>
-            <button onClick={goToNextRecipe}>Next</button>
+            <div className="buttons">
+              <button onClick={goToPreviousRecipe}>Previous</button>
+              <button onClick={goToNextRecipe}>Next</button>
+            </div>
           </div>
         )
       )}
