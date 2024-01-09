@@ -1,5 +1,5 @@
 import React from "react";
-import one from "./one.jpg";
+
 const Recipe = ({ recipe }) => {
   return (
     <div className="container">

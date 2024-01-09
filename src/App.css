@@ -3,8 +3,8 @@
 * {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
     "Noto Sans", "Liberation Sans", Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -76,6 +76,25 @@
 }
 
 .navbar li:hover {
+
+  font-weight: bold;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.loader img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
 font-weight: bold;
 }
 
@@ -130,4 +149,5 @@ text-transform: uppercase;
 
 .steps p {
   padding-bottom: 10px;
+
 }
