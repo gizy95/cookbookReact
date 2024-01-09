@@ -8,20 +8,8 @@
   padding: 0;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .header {
   position: relative;
-}
-
-.header img {
-  width: 100%;
-  height: auto;
 }
 
 .header h1 {
@@ -100,36 +88,40 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-font-weight: bold;
+  font-weight: bold;
 }
 
 /*RECIPE STYLE*/
 
 .container {
- width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
 }
 
 .header h1 {
-background-color: #f3f3e8ce;
-padding: 40px 60px;
-border: 2px solid black;
-border-radius: 3px;
-text-align: center;
+  background-color: #f3f3e8ce;
+  padding: 40px 60px;
+  border: 2px solid black;
+  border-radius: 3px;
+  text-align: center;
 }
 
 .header img {
-  width: 100vw; 
+  width: 100vw;
   height: 300px;
   object-fit: cover;
 }
 
 .info {
-text-align: center;
-margin: 30px;
+  text-align: center;
+  margin: 30px;
 }
 
 .info-title {
-text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .description {
@@ -148,7 +140,7 @@ text-transform: uppercase;
 
 .steps h2 {
   font-family: 'Cormorant', serif;
-  font-size: 30px; 
+  font-size: 30px;
   margin-bottom: 20px;
 }
 
