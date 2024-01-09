@@ -9,25 +9,25 @@ const Recipe = ({ recipe }) => {
       </div>
       <div className="info">
         <div className="info-container">
-          <span class="material-symbols-outlined">
+          <span className="material-symbols-outlined">
             dining
           </span>
           <p><span className="info-title">Servings</span> <br /> {recipe.servings}</p>
         </div>
         <div className="info-container">
-          <span class="material-symbols-outlined">
+          <span className="material-symbols-outlined">
             schedule
           </span>
           <p><span className="info-title">Time</span><br /> {recipe.time} hours</p>
         </div>
         <div>
-          <span class="material-symbols-outlined">
+          <span className="material-symbols-outlined">
             skillet
           </span>
           <p><span className="info-title">Difficulty</span><br /> {recipe.difficulty}</p>
         </div>
         <div>
-          <span class="material-symbols-outlined">
+          <span className="material-symbols-outlined">
             local_fire_department
           </span>
           <p><span className="info-title">Calories</span><br /> {recipe.calories}</p>
