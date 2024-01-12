@@ -2,8 +2,8 @@ import { createClient } from 'contentful'
 
 const useContentful = () => {
 
-    const space = "xa7obka5ntht";
-    const accessToken = "HUrXSj4H8HsmqhPCDgyckdd-2y2mNhkqd886wxZS5Ig";
+    const space = import.meta.env.VITE_REACT_KEY_CONTENTFUL_SPACE;
+    const accessToken = import.meta.env.VITE_REACT_KEY_CONTENTFUL;
 
 
     const client = createClient({
