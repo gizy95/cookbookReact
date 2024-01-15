@@ -69,6 +69,8 @@ function App() {
               <button onClick={goToNextRecipe}>Next</button>
             </div>
           </div>
+
+
         )
       )}
     </>
