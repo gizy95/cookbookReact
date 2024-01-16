@@ -1,15 +1,14 @@
-const Navbar = ({ setCurrentRecipeGroup, setCurrentRecipeIndex }) => {
+import { NavLink } from "react-router-dom";
+import "./App.css";
+
+const Navbar = () => {
   return (
-    <>
-      <div className="navbar">
-        <ul>
-          <li className="home">Cookbook Home</li>
-          <li>Salads</li>
-          <li>Main Dishes</li>
-          <li>Desserts</li>
-        </ul>
-      </div>
-    </>
+    <nav className="navbar">
+      <NavLink to="/" className="nav-link">Home</NavLink>
+      <NavLink to="/salads" className="nav-link">Salads</NavLink>
+      <NavLink to="/main" className="nav-link">Main</NavLink>
+      <NavLink to="/desert" className="nav-link">Desert</NavLink>
+    </nav>
   );
 };
 

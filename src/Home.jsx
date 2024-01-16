@@ -1,3 +1,4 @@
+import Navbar from "./Navbar";
 import backgroundImage from "./assets/images/background.jpg";
 
 const Home = () => {
