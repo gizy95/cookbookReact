@@ -17,7 +17,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 40px;
+  font-size: 32px;
   color: white;
   text-shadow: 2px 2px 4px #000000;
 }
@@ -35,11 +35,11 @@
 }
 
 .ingredients {
-  width: 30%;
+  max-width: 125px;
 }
 
 .steps {
-  width: 70%;
+  max-width: 375px;
 }
 
 /*NAVBAR*/
@@ -105,7 +105,7 @@
 }
 
 .header img {
-  width: 100vw;
+  width: 800px;
   height: 400px;
   object-fit: cover;
 }
@@ -147,8 +147,8 @@
 
 .buttons {
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  justify-content: space-around;
+  gap: 100px;
 }
 
 .buttons button {

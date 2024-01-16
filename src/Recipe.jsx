@@ -1,6 +1,6 @@
 import React from "react";
 
-const Recipe = ({ recipe }) => {
+const Recipe = ({ recipe, goToNextRecipe, goToPreviousRecipe }) => {
   return (
     <div className="container">
       <div className="header">
@@ -32,6 +32,10 @@ const Recipe = ({ recipe }) => {
           </span>
           <p><span className="info-title">Calories</span><br /> {recipe.calories}</p>
         </div>
+      </div>
+      <div className="buttons">
+        <button onClick={goToPreviousRecipe}>Previous</button>
+        <button onClick={goToNextRecipe}>Next</button>
       </div>
       <div className="description">
         <div className="ingredients">

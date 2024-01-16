@@ -38,14 +38,10 @@ const Recipes = () => {
                         <Recipe
                             recipe={recipes[currentRecipeIndex]}
                             key={currentRecipeIndex}
+                            goToNextRecipe={goToNextRecipe}
+                            goToPreviousRecipe={goToPreviousRecipe}
                         />
-                        <div className="buttons">
-                            <button onClick={goToPreviousRecipe}>Previous</button>
-                            <button onClick={goToNextRecipe}>Next</button>
-                        </div>
                     </div>
-
-
                 )
             )}
         </>
