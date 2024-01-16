@@ -10,7 +10,7 @@ const Recipes = () => {
     const [recipes, setRecipes] = useState([]);
     const [currentRecipeIndex, setCurrentRecipeIndex] = useState(0);
     const [loading, setLoading] = useState(true);
-    const {course} = useParams()
+    const { course } = useParams()
     const { getRecipes } = useContentful(course);
 
     useEffect(() => {
@@ -41,14 +41,10 @@ const Recipes = () => {
                         <Recipe
                             recipe={recipes[currentRecipeIndex]}
                             key={currentRecipeIndex}
+                            goToNextRecipe={goToNextRecipe}
+                            goToPreviousRecipe={goToPreviousRecipe}
                         />
-                        <div className="buttons">
-                            <button onClick={goToPreviousRecipe}>Previous</button>
-                            <button onClick={goToNextRecipe}>Next</button>
-                        </div>
                     </div>
-
-
                 )
             )}
         </>

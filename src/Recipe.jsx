@@ -1,6 +1,6 @@
 import React from "react";
 
-const Recipe = ({ recipe }) => {
+const Recipe = ({ recipe, goToNextRecipe, goToPreviousRecipe }) => {
   return (
     <div className="container">
       <div className="header">
@@ -33,12 +33,16 @@ const Recipe = ({ recipe }) => {
           <p><span className="info-title">Calories</span><br /> {recipe.calories}</p>
         </div>
       </div>
+      <div className="buttons">
+        <button onClick={goToPreviousRecipe}>Previous</button>
+        <button onClick={goToNextRecipe}>Next</button>
+      </div>
       <div className="description">
         <div className="ingredients">
           <h2>Ingredients</h2>
           <ul>
-            {recipe.ingredients.map((ingredient) => (
-              <li>{ingredient}</li>
+            {recipe.ingredients.map((ingredient, index) => (
+              <li key={index}>{ingredient}</li>
             ))}
           </ul>
         </div>
