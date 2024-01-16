@@ -3,12 +3,15 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Recipe from "./Recipe";
 import Loader from "./Loader";
+import { useParams } from "react-router";
 
 const Recipes = () => {
+
     const [recipes, setRecipes] = useState([]);
     const [currentRecipeIndex, setCurrentRecipeIndex] = useState(0);
     const [loading, setLoading] = useState(true);
-    const { getRecipes } = useContentful();
+    const {course} = useParams()
+    const { getRecipes } = useContentful(course);
 
     useEffect(() => {
         setLoading(true);
@@ -16,7 +19,7 @@ const Recipes = () => {
             setRecipes(response);
             setLoading(false); // Set loading to false after fetching data
         });
-    }, []);
+    }, [course]);
 
     const goToNextRecipe = () => {
         setCurrentRecipeIndex((prevIndex) => (prevIndex + 1) % recipes.length);
