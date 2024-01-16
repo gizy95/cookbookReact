@@ -41,8 +41,8 @@ const Recipe = ({ recipe, goToNextRecipe, goToPreviousRecipe }) => {
         <div className="ingredients">
           <h2>Ingredients</h2>
           <ul>
-            {recipe.ingredients.map((ingredient) => (
-              <li>{ingredient}</li>
+            {recipe.ingredients.map((ingredient, index) => (
+              <li key={index}>{ingredient}</li>
             ))}
           </ul>
         </div>

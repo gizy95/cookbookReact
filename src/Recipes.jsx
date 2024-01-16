@@ -10,7 +10,7 @@ const Recipes = () => {
     const [recipes, setRecipes] = useState([]);
     const [currentRecipeIndex, setCurrentRecipeIndex] = useState(0);
     const [loading, setLoading] = useState(true);
-    const {course} = useParams()
+    const { course } = useParams()
     const { getRecipes } = useContentful(course);
 
     useEffect(() => {
