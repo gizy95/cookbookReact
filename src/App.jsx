@@ -1,9 +1,9 @@
 
 import "./App.css";
-import Navbar from "./Navbar";
-import Home from "./Home";
+import Navbar from "./elements/Navbar";
+import Home from "./views/Home";
 import { Routes, Route } from "react-router";
-import Recipes from "./Recipes"; 
+import Recipes from "./views/Recipes";
 
 function App() {
 

@@ -1,8 +1,8 @@
-import useContentful from "./useContentful";
+import useContentful from "../utils/useContentful";
 import { useState, useEffect } from "react";
-import "./App.css";
-import Recipe from "./Recipe";
-import Loader from "./Loader";
+import "../App.css";
+import Recipe from "../components/Recipe";
+import Loader from "../components/Loader";
 import { useParams } from "react-router";
 
 const Recipes = () => {
@@ -14,6 +14,7 @@ const Recipes = () => {
     const { getRecipes } = useContentful(course);
 
     useEffect(() => {
+        setCurrentRecipeIndex(0);
         setLoading(true);
         getRecipes().then((response) => {
             setRecipes(response);
@@ -30,6 +31,7 @@ const Recipes = () => {
             (prevIndex) => (prevIndex - 1 + recipes.length) % recipes.length
         );
     };
+    console.log(recipes);
 
     return (
         <>
