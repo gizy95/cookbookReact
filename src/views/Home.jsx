@@ -1,7 +1,7 @@
-import Navbar from "../elements/Navbar";
 import backgroundImage from "../assets/images/background.jpg";
 
 const Home = () => {
+
     return (
         <>
             <div

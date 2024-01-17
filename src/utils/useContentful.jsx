@@ -19,16 +19,20 @@ const useContentful = (course) => {
 
       const sanitizedEntries = entries.items.map((item) => {
         const picture = item.fields.picture.fields;
+        const id = item.sys.id;
 
         return {
           ...item.fields,
           picture,
+          id,
         };
       });
 
-      console.log(sanitizedEntries)
+      // console.log(sanitizedEntries)
 
-      const filteredEntries = sanitizedEntries.filter( recipe => recipe.course === course )
+      const filteredEntries = sanitizedEntries.filter(
+        (recipe) => recipe.course === course
+      );
 
       return filteredEntries;
     } catch (error) {
