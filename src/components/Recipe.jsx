@@ -1,6 +1,8 @@
 import React from "react";
 
 const Recipe = ({ recipe, goToNextRecipe, goToPreviousRecipe }) => {
+
+  console.log(recipe);
   return (
     <div className="container">
       <div className="header">
