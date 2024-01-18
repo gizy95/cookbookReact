@@ -1,12 +1,23 @@
 import backgroundImage from "../assets/images/background.jpg";
+import { useSpring, animated } from "react-spring";
 
 const Home = () => {
 
+    const springProps = useSpring({
+        opacity: 1,
+        transform: "translateY(0px)",
+        from: { opacity: 0, transform: "translateY(-50px)" },
+        config: { duration: 1200 }
+    });
+
     return (
         <>
-            <div
+            <animated.div
                 className="hero"
-                style={{ backgroundImage: `url(${backgroundImage})` }}
+                style={{
+                    backgroundImage: `url(${backgroundImage})`,
+                    ...springProps,
+                }}
             >
                 <div className="flex-container">
                     <h1>Cookbook</h1>
@@ -22,7 +33,7 @@ const Home = () => {
                         explore a world of culinary possibilities with Cookbook!
                     </p>
                 </div>
-            </div>
+            </animated.div>
         </>
     );
 };
