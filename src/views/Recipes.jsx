@@ -5,7 +5,7 @@ import "../App.css";
 import Recipe from "../components/Recipe";
 import Loader from "../components/Loader";
 import { useParams } from "react-router";
-// import useSingleentry from "../utils/useSingleentry";
+import useSingleEntry from "../utils/useSingleEntry";
 
 const Recipes = () => {
 
@@ -15,9 +15,9 @@ const Recipes = () => {
     const { course } = useParams()
     const { getRecipes } = useContentful(course);
 
-    // FETCHING ONLY 1 RECIPE
-    // const entry = useSingleentry('4pjcfGbyaywSgPo00hElEf');
-    // console.log(entry)
+    //FETCHING ONLY 1 RECIPE
+    const entry = useSingleEntry(course);
+    console.log(entry)
 
     useEffect(() => {
         setCurrentRecipeIndex(0);
