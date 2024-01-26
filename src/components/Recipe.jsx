@@ -1,8 +1,37 @@
 import React from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import useContentful from "../utils/useContentful";
+import Loader from "./Loader";
 
-const Recipe = ({ recipe, goToNextRecipe, goToPreviousRecipe }) => {
 
-  console.log(recipe);
+const Recipe = () => {
+
+  const [recipe, setRecipe] = useState([]);
+  const { getRecipe } = useContentful();
+  const { id } = useParams();
+
+  const fetchRecipe = async (id) => {
+    const response = await getRecipe(id);
+    try {
+
+      setRecipe(response);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    fetchRecipe(id);
+  }, [id])
+
+
+
+
+  if (!recipe || Object.keys(recipe).length === 0) {
+    return <Loader />; // or any loading indicator
+  }
+
   return (
     <div className="container">
       <div className="header">
@@ -34,10 +63,6 @@ const Recipe = ({ recipe, goToNextRecipe, goToPreviousRecipe }) => {
           </span>
           <p><span className="info-title">Calories</span><br /> {recipe.calories}</p>
         </div>
-      </div>
-      <div className="buttons">
-        <button onClick={goToPreviousRecipe}>Previous</button>
-        <button onClick={goToNextRecipe}>Next</button>
       </div>
       <div className="description">
         <div className="ingredients">

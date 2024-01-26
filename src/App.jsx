@@ -4,6 +4,7 @@ import Navbar from "./elements/Navbar";
 import Home from "./views/Home";
 import { Routes, Route } from "react-router";
 import Recipes from "./views/Recipes";
+import Recipe from "./components/Recipe";
 
 function App() {
 
@@ -13,7 +14,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/:course" element={<Recipes />} />
+        <Route path="/recipes" element={<Recipes />} />
+        <Route path="/recipes/:id" element={<Recipe />} />
       </Routes>
     </>
   );
