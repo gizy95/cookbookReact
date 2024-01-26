@@ -1,0 +1,52 @@
+.course-title {
+  margin: 3% 0%;
+  padding: 1% 10%;
+  font-family: "Cormorant";
+  font-size: 2rem;
+  color: #5acaa7;
+  background: linear-gradient(to right, #ececec, #fff);
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2% 5%;
+  gap: 50px;
+  justify-content: space-evenly;
+}
+
+@media screen and (min-width: 1000px) {
+  .card-container {
+    justify-content: flex-start;
+  }
+}
+.recipe-card {
+  width: 300px;
+  height: 200px;
+  border-radius: 4px;
+  background-color: #5acaa7;
+  background: linear-gradient(to right, #5acaa7, #4cd5aa);
+  box-shadow: 2px 6px 5px rgba(0, 0, 0, 0.1);
+  transition: 0.2s;
+}
+
+.recipe-card:hover {
+  margin: -5px 5px 5px -5px;
+  cursor: pointer;
+}
+
+.recipe-img {
+  width: 285px;
+  height: 70%;
+  margin: 7px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.recipe-title {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+}
