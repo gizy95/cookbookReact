@@ -1,6 +1,6 @@
 import { createClient } from "contentful";
 
-const useContentful = (course) => {
+const useContentful = () => {
   const space = import.meta.env.VITE_REACT_KEY_CONTENTFUL_SPACE;
   const accessToken = import.meta.env.VITE_REACT_KEY_CONTENTFUL;
 
@@ -28,18 +28,31 @@ const useContentful = (course) => {
         };
       });
 
-      // console.log(sanitizedEntries)
-
-      const filteredEntries = sanitizedEntries.filter(
-        (recipe) => recipe.course === course
-      );
-
-      return filteredEntries;
+      return sanitizedEntries;
     } catch (error) {
       console.log("Error fetching data ${error}");
     }
+
   };
-  return { getRecipes };
+  const getRecipe = async (id) => {
+    try {
+      let entry = await client.getEntry(id);
+      console.log(entry)
+      const picture = entry.fields.picture.fields;
+      const sanitizedEntry = {
+        ...entry.fields,
+        picture,
+        id: entry.sys.id,
+      };
+
+      return sanitizedEntry;
+    } catch (error) {
+      console.log(error);
+    }
+
+  };
+
+  return { getRecipes, getRecipe };
 };
 
 export default useContentful;
