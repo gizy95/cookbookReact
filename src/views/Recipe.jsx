@@ -1,26 +1,28 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import useContentful from "../utils/useContentful";
 import Loader from "../components/Loader";
+import endpoints from "../utils/endpoints";
 
 
 const Recipe = () => {
 
   const [recipe, setRecipe] = useState([]);
-  const { getRecipe } = useContentful();
   const { id } = useParams();
+  const { getRecipe } = endpoints();
 
   const fetchRecipe = async (id) => {
-    const response = await getRecipe(id);
     try {
 
+      const response = await getRecipe(id);
       setRecipe(response);
       console.log(response);
     } catch (error) {
       console.log(error);
     }
   };
+
+
   useEffect(() => {
     fetchRecipe(id);
   }, [id])

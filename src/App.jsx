@@ -4,7 +4,7 @@ import Navbar from "./elements/Navbar";
 import Home from "./views/Home";
 import { Routes, Route } from "react-router";
 import Recipes from "./views/Recipes";
-import Recipe from "./components/Recipe";
+import Recipe from "./views/Recipe";
 
 function App() {
 
