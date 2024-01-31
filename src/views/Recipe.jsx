@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Loader from "../components/Loader";
-import endpoints from "../utils/endpoints";
+import endpoints from "../utils/recipesAPI";
 
 
 const Recipe = () => {

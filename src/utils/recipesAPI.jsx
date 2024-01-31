@@ -5,16 +5,12 @@ const Endpoints = () => {
 
     const getRecipes = async () => {
         try {
-            const res = await fetch("http://localhost:8000/recipes/", {
-                method: "GET",
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-            }
+            const res = await fetch("http://localhost:8000/recipes/");
+            const data = await res.json();
+            console.log(data)
 
-            );
-            const data = await res.json()
-            return data.recipes
+
+            return data
 
         } catch (error) {
             console.log(error);

@@ -3,7 +3,7 @@ import "../App.css";
 import { useNavigate } from "react-router-dom";
 import Loader from "../components/Loader";
 import "../Recipe-card.css";
-import endpoints from "../utils/endpoints";
+import endpoints from "../utils/recipesAPI";
 
 const Recipes = () => {
   const navigate = useNavigate();
@@ -26,12 +26,7 @@ const Recipes = () => {
 
 
   useEffect(() => {
-
     fetchRecipes();
-
-
-
-
   }, []);
 
   const handleCardClick = (id) => {
@@ -57,7 +52,7 @@ const Recipes = () => {
                     >
                       <img
                         className="recipe-img"
-                        src={recipe.picture.file.url}
+                        src={recipe.picture}
                         alt={recipe.title}
                       />
                       <p className="recipe-title">{recipe.title}</p>
@@ -77,7 +72,7 @@ const Recipes = () => {
                     >
                       <img
                         className="recipe-img"
-                        src={recipe.picture.file.url}
+                        src={recipe.picture}
                         alt={recipe.title}
                       />
                       <p className="recipe-title">{recipe.title}</p>
@@ -97,7 +92,7 @@ const Recipes = () => {
                     >
                       <img
                         className="recipe-img"
-                        src={recipe.picture.file.url}
+                        src={recipe.picture}
                         alt={recipe.title}
                       />
                       <p className="recipe-title">{recipe.title}</p>
