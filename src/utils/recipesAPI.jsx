@@ -7,7 +7,6 @@ const Endpoints = () => {
         try {
             const res = await fetch("http://localhost:8000/recipes/");
             const data = await res.json();
-            console.log(data)
 
 
             return data
@@ -22,12 +21,7 @@ const Endpoints = () => {
 
     const getRecipe = async (id) => {
         try {
-            const res = await fetch(`http://localhost:8000/recipes/${id}`, {
-                method: "GET",
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-            });
+            const res = await fetch(`http://localhost:8000/recipes/${id}`);
             const data = await res.json();
             console.log(data)
             return data;

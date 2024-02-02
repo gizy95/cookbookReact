@@ -7,6 +7,7 @@ import endpoints from "../utils/recipesAPI";
 
 const Recipe = () => {
 
+
   const [recipe, setRecipe] = useState([]);
   const { id } = useParams();
   const { getRecipe } = endpoints();
@@ -31,13 +32,14 @@ const Recipe = () => {
 
 
   if (!recipe || Object.keys(recipe).length === 0) {
-    return <Loader />; // or any loading indicator
+    return <Loader />;
   }
 
+  const ingredientsArray = recipe.ingredients.split(', ');
   return (
     <div className="container">
       <div className="header">
-        <img src={recipe.picture.file.url} alt="img"></img>
+        <img src={recipe.picture} alt="img"></img>
         <h1>{recipe.title}</h1>
       </div>
       <div className="info">
@@ -51,7 +53,7 @@ const Recipe = () => {
           <span className="material-symbols-outlined">
             schedule
           </span>
-          <p><span className="info-title">Time</span><br /> {recipe.time} hours</p>
+          <p><span className="info-title">Time</span><br /> {recipe.time} minutes</p>
         </div>
         <div>
           <span className="material-symbols-outlined">
@@ -70,7 +72,7 @@ const Recipe = () => {
         <div className="ingredients">
           <h2>Ingredients</h2>
           <ul>
-            {recipe.ingredients.map((ingredient, index) => (
+            {ingredientsArray.map((ingredient, index) => (
               <li key={index}>{ingredient}</li>
             ))}
           </ul>
