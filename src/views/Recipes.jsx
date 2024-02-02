@@ -1,22 +1,32 @@
-import useContentful from "../utils/useContentful";
 import { useState, useEffect } from "react";
 import "../App.css";
 import { useNavigate } from "react-router-dom";
 import Loader from "../components/Loader";
 import "../Recipe-card.css";
+import endpoints from "../utils/recipesAPI";
 
 const Recipes = () => {
   const navigate = useNavigate();
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { getRecipes } = useContentful();
+  const { getRecipes } = endpoints();
+
+  const fetchRecipes = async () => {
+    try {
+      setLoading(true);
+      const response = await getRecipes();
+      setRecipes(response);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
 
   useEffect(() => {
-    setLoading(true);
-    getRecipes().then((response) => {
-      setRecipes(response);
-      setLoading(false); // Set loading to false after fetching data
-    });
+    fetchRecipes();
   }, []);
 
   const handleCardClick = (id) => {
@@ -42,7 +52,7 @@ const Recipes = () => {
                     >
                       <img
                         className="recipe-img"
-                        src={recipe.picture.file.url}
+                        src={recipe.picture}
                         alt={recipe.title}
                       />
                       <p className="recipe-title">{recipe.title}</p>
@@ -62,7 +72,7 @@ const Recipes = () => {
                     >
                       <img
                         className="recipe-img"
-                        src={recipe.picture.file.url}
+                        src={recipe.picture}
                         alt={recipe.title}
                       />
                       <p className="recipe-title">{recipe.title}</p>
@@ -82,7 +92,7 @@ const Recipes = () => {
                     >
                       <img
                         className="recipe-img"
-                        src={recipe.picture.file.url}
+                        src={recipe.picture}
                         alt={recipe.title}
                       />
                       <p className="recipe-title">{recipe.title}</p>
