@@ -21,7 +21,7 @@ const Endpoints = () => {
 
     const getRecipe = async (id) => {
         try {
-            const res = await fetch(`https://cookbook-server-xiq5.onrender.com/${id}`);
+            const res = await fetch(`https://cookbook-server-xiq5.onrender.com/recipes/${id}`);
             const data = await res.json();
             console.log(data)
             return data;
