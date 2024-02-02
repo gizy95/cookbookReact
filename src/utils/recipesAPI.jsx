@@ -5,7 +5,7 @@ const Endpoints = () => {
 
     const getRecipes = async () => {
         try {
-            const res = await fetch("http://localhost:8000/recipes/");
+            const res = await fetch("https://cookbook-server-xiq5.onrender.com/recipes/");
             const data = await res.json();
 
 
@@ -21,7 +21,7 @@ const Endpoints = () => {
 
     const getRecipe = async (id) => {
         try {
-            const res = await fetch(`http://localhost:8000/recipes/${id}`);
+            const res = await fetch(`https://cookbook-server-xiq5.onrender.com/${id}`);
             const data = await res.json();
             console.log(data)
             return data;
