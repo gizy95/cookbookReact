@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Loader from "../components/Loader";
 import endpoints from "../utils/recipesAPI";
+import NavButton from "../components/NavButton";
 
 
 const Recipe = () => {
@@ -84,6 +85,7 @@ const Recipe = () => {
           ))}
         </div>
       </div>
+      <NavButton />
     </div>
   );
 };

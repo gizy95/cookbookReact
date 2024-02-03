@@ -5,6 +5,7 @@ import Home from "./views/Home";
 import { Routes, Route } from "react-router";
 import Recipes from "./views/Recipes";
 import Recipe from "./views/Recipe";
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/recipes" element={<Recipes />} />
         <Route path="/recipes/:id" element={<Recipe />} />
       </Routes>
+      <Footer />
     </>
   );
 }
