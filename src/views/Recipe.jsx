@@ -72,11 +72,15 @@ const Recipe = () => {
       <div className="description">
         <div className="ingredients">
           <h2>Ingredients</h2>
-          <ul>
-            {ingredientsArray.map((ingredient, index) => (
-              <li key={index}>{ingredient}</li>
-            ))}
-          </ul>
+          <table>
+            <tbody>
+              {ingredientsArray.map((ingredient, index) => (
+                <tr key={index}>
+                  <td>{ingredient}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
         <div className="steps">
           <h2>Steps</h2>
